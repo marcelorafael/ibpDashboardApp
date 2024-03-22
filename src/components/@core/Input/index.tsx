@@ -1,10 +1,24 @@
-import { View, Text } from 'react-native';
 import React from 'react';
+import { View, Text } from 'react-native';
+import * as S from './styles'
 
-export default function Input() {
+export interface InputProps{
+  value?: string;
+  placeholder?: string;
+  onChangeText?: () => void;
+}
+
+const Input  = ({value, placeholder, onChangeText}:InputProps) => {
   return (
     <View>
-      <Text>Input</Text>
+      <S.Input
+        value={value}
+        placeholder={placeholder}
+        placeholderTextColor='gray'
+        onChangeText={onChangeText}
+      />
     </View>
   );
 }
+
+export default Input;

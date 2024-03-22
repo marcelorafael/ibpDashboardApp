@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "shoplisty_app.app"
-               BlueprintName = "shoplisty_app"
-               ReferencedContainer = "container:shoplisty_app.xcodeproj">
+               BuildableName = "ibpDashboardApp.app"
+               BlueprintName = "ibpDashboardApp"
+               ReferencedContainer = "container:ibpDashboardApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "shoplisty_appTests.xctest"
-               BlueprintName = "shoplisty_appTests"
-               ReferencedContainer = "container:shoplisty_app.xcodeproj">
+               BuildableName = "ibpDashboardAppTests.xctest"
+               BlueprintName = "ibpDashboardAppTests"
+               ReferencedContainer = "container:ibpDashboardApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "shoplisty_app.app"
-            BlueprintName = "shoplisty_app"
-            ReferencedContainer = "container:shoplisty_app.xcodeproj">
+            BuildableName = "ibpDashboardApp.app"
+            BlueprintName = "ibpDashboardApp"
+            ReferencedContainer = "container:ibpDashboardApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "shoplisty_app.app"
-            BlueprintName = "shoplisty_app"
-            ReferencedContainer = "container:shoplisty_app.xcodeproj">
+            BuildableName = "ibpDashboardApp.app"
+            BlueprintName = "ibpDashboardApp"
+            ReferencedContainer = "container:ibpDashboardApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

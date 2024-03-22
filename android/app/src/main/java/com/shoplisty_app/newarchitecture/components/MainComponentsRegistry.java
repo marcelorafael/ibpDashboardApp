@@ -1,4 +1,4 @@
-package com.shoplisty_app.newarchitecture.components;
+package com.ibpDashboardApp.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
