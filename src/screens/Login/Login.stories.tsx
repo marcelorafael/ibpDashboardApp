@@ -7,16 +7,10 @@ import { storiesOf } from '@storybook/react-native';
 
 import { View, Text } from 'react-native';
 
-import Input from '.';
+import Login from '.';
 
-storiesOf('@core/Input', module)
+storiesOf('screens/Login', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
-    <View style={{flex: 1, justifyContent:'center', paddingHorizontal: 10}}>
-      <Input
-        value='Teste'
-        placeholder='Input'
-        onChangeText={() => {}}
-      />
-    </View>
+      <Login />
   ));

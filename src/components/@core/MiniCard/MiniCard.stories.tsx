@@ -7,16 +7,16 @@ import { storiesOf } from '@storybook/react-native';
 
 import { View, Text } from 'react-native';
 
-import Input from '.';
+import MiniCard from '.';
 
-storiesOf('@core/Input', module)
+storiesOf('@core/MiniCard', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
-    <View style={{flex: 1, justifyContent:'center', paddingHorizontal: 10}}>
-      <Input
-        value='Teste'
-        placeholder='Input'
-        onChangeText={() => {}}
-      />
+    <View style={{flex: 1, justifyContent:'center', alignItems:'center', paddingHorizontal: 10, backgroundColor:"#F5F5F5"}}>
+      <MiniCard
+        variant='small'
+      >
+        <Text>Igreja Batista da Pedreira</Text>
+      </MiniCard>
     </View>
   ));

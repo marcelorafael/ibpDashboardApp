@@ -8,7 +8,7 @@ import { View } from 'react-native';
 
 import Button from '.';
 
-storiesOf('Button', module)
+storiesOf('@core/Button', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <View

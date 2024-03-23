@@ -8,7 +8,7 @@ export default {
     neutralL4: '#fcfcfc',
     otherYellow: '#fdbe32',
     otherYellowL1: '#ffe3a6',
-    primary: '#00a877',
+    primary: '#E97812',
     primaryD1: '#006648',
     primaryD2: '#003324',
     primaryL1: '#47A882',
@@ -19,6 +19,8 @@ export default {
     secondaryD3: '#08090b',
     secondaryL1: '#2e3a40',
     secondaryL2: '#4a5b64',
+    backgroundDefault: '#f5f5f5',
+    light: '#fff',
   },
   family: {
     light: 'Montserrat-Light',
