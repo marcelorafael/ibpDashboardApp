@@ -12,13 +12,15 @@ export interface LoginProps {
   valuePasswr?: string;
   onChangeTextEmail?: () => void;
   onChangeTextPasswr?: () => void;
+  onClick?: () => void;
 }
 
 const Login = ({
   valueEmail,
   valuePasswr,
   onChangeTextEmail,
-  onChangeTextPasswr
+  onChangeTextPasswr,
+  onClick,
 }: LoginProps) => {
   return (
     <S.Wrapper>
@@ -40,6 +42,7 @@ const Login = ({
         <Button
           title='Acessar'
           variant='container'
+          onClick={onClick}
         />
       </S.CenterView>
     </S.Wrapper>

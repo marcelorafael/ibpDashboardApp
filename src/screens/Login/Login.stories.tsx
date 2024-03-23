@@ -9,7 +9,7 @@ import { View, Text } from 'react-native';
 
 import Login from '.';
 
-storiesOf('Login', module)
+storiesOf('screens/Login', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
       <Login />

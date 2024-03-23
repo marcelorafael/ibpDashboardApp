@@ -19,6 +19,8 @@ export default {
     secondaryD3: '#08090b',
     secondaryL1: '#2e3a40',
     secondaryL2: '#4a5b64',
+    backgroundDefault: '#f5f5f5',
+    light: '#fff',
   },
   family: {
     light: 'Montserrat-Light',
