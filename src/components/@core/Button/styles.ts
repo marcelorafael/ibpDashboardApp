@@ -60,13 +60,14 @@ export const Wrapper = styled.TouchableOpacity.attrs({
 
 export const TextButton = styled.Text<ButtonProps>`
   ${({theme, color}) => css`
-    color: ${color === 'green'
+    /* color: ${color === 'green'
       ? theme.colors.primary
       : color === 'red'
       ? theme.colors.error
-      : theme.colors.neutralL4};
+      : theme.colors.neutralL4}; */
+      color: #fff;
 
-    font-size: ${theme?.fonts?.info};
+    font-size: ${theme?.fonts?.title};
 
     font-weight: bold;
   `}

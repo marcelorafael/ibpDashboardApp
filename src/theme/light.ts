@@ -8,7 +8,7 @@ export default {
     neutralL4: '#fcfcfc',
     otherYellow: '#fdbe32',
     otherYellowL1: '#ffe3a6',
-    primary: '#00a877',
+    primary: '#E97812',
     primaryD1: '#006648',
     primaryD2: '#003324',
     primaryL1: '#47A882',
