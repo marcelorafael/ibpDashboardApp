@@ -8,9 +8,18 @@ const image = require('./logo2.png');
 
 
 export interface LoginProps {
+  valueEmail?: string;
+  valuePasswr?: string;
+  onChangeTextEmail?: () => void;
+  onChangeTextPasswr?: () => void;
 }
 
-const Login = ({ }: LoginProps) => {
+const Login = ({
+  valueEmail,
+  valuePasswr,
+  onChangeTextEmail,
+  onChangeTextPasswr
+}: LoginProps) => {
   return (
     <S.Wrapper>
       <S.Head>
@@ -18,8 +27,16 @@ const Login = ({ }: LoginProps) => {
         {/* <S.Text>Igreja Batista da Pedreira</S.Text> */}
       </S.Head>
       <S.CenterView>
-        <Input placeholder='email' />
-        <Input placeholder='******' />
+        <Input
+          value={valueEmail}
+          placeholder='email'
+          onChangeText={onChangeTextEmail}
+        />
+        <Input
+          value={valuePasswr}
+          placeholder='******'
+          onChangeText={onChangeTextPasswr}
+        />
         <Button
           title='Acessar'
           variant='container'
