@@ -6,6 +6,8 @@ import { ThemeProvider } from 'styled-components';
 
 import { NavigationContainer } from '@react-navigation/native';
 
+import { StatusBar } from 'react-native';
+
 import dark from './src/theme/dark';
 import light from './src/theme/light';
 
@@ -15,6 +17,7 @@ const App = () => {
   return (
     <ThemeProvider theme={dark}>
       <View style={{flex: 1}}>
+        <StatusBar backgroundColor='#E97812' />
         <Routes />
       </View>
     </ThemeProvider>
