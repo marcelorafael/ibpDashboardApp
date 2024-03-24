@@ -1,6 +1,10 @@
 import React from "react";
 import * as S from './styles';
 
+import { StatusBar } from "react-native";
+
+const image = { uri: 'https://i.ytimg.com/vi/TRtNu_LfFjY/maxresdefault.jpg' }
+
 export interface HomeProps {
     children?: JSX.Element;
     title?: string;
@@ -10,9 +14,19 @@ export interface HomeProps {
 const Home = ({ children, name, title }: HomeProps) => {
     return (
         <S.Wrapper>
-            <S.Title>{title}</S.Title>
-            <S.Title>{name}</S.Title>
-            {children}
+            <StatusBar translucent backgroundColor='transparent' />
+            <S.BackgroundImage
+                source={image}
+                resizeMode='cover'
+                borderBottomLeftRadius={20}
+                borderBottomRightRadius={20}
+            >
+                <S.Title>{title}</S.Title>
+                {/* <S.Title>{name}</S.Title> */}
+            </S.BackgroundImage>
+            <S.CenterView>
+                {children}
+            </S.CenterView>
         </S.Wrapper>
     );
 }
