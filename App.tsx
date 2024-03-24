@@ -4,14 +4,18 @@ import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
+import { NavigationContainer } from '@react-navigation/native';
+
 import dark from './src/theme/dark';
 import light from './src/theme/light';
+
+import Routes from './src/Routes';
 
 const App = () => {
   return (
     <ThemeProvider theme={dark}>
-      <View>
-        <Text>App</Text>
+      <View style={{flex: 1}}>
+        <Routes />
       </View>
     </ThemeProvider>
   );
