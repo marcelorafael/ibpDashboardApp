@@ -3,7 +3,7 @@ import Home from '../../screens/Home';
 
 const HomePresentation = () => {
  return (
-   <Home />
+   <Home title='Olá!' name='Marcelo' />
   );
 }
 
