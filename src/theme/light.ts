@@ -21,6 +21,9 @@ export default {
     secondaryL2: '#4a5b64',
     backgroundDefault: '#f5f5f5',
     light: '#fff',
+    blueRiver: '#3498db',
+    esmerald: '#2ecc71',
+    amethyst: '#9b59b6',
   },
   family: {
     light: 'Montserrat-Light',
