@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LoginPresentation from '../presentation/LoginPresentation';
 import HomePresentation from '../presentation/HomePresentation';
+import RegisterUserPresentation from '../presentation/RegisterUserPresentation';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,11 @@ function Routes() {
           name="HomePresentation"
           component={HomePresentation}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="RegisterUserPresentation"
+          component={RegisterUserPresentation}
+          // options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
