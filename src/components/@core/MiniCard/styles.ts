@@ -26,6 +26,15 @@ const wrapperModifiers = {
     default: (theme: DefaultTheme) => css`
         background-color: ${theme.colors.light};
     `,
+    blue: (theme: DefaultTheme) => css`
+        background-color: ${theme.colors.blueRiver};
+    `,
+    error: (theme: DefaultTheme) => css`
+        background-color: ${theme.colors.error};
+    `,
+    purple: (theme: DefaultTheme) => css`
+        background-color: ${theme.colors.amethyst};
+    `,
 };
 
 export const Wrapper = styled.TouchableOpacity.attrs({

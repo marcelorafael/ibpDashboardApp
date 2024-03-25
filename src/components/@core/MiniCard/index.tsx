@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native';
 import * as S from './styles'
 
 export type VariantType = 'small' | 'medium' | 'large';
-export type BackgroundType = 'primary' | 'black' | 'default';
+export type BackgroundType = 'primary' | 'black' | 'default' | 'blue' | 'error' | 'purple';
 
 export interface MiniCardProps {
   children?: React.ReactElement;

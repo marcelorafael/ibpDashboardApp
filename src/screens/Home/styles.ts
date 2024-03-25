@@ -11,10 +11,9 @@ export const Wrapper = styled.View`
 
 export const CenterView = styled.View`
     ${({theme}) => css`
-        flex: 1;
-        background-color: ${theme.colors.backgroundDefault};
-
         padding: 10px;
+
+        height: 100%;
     `}
 `;
 
@@ -38,6 +37,6 @@ export const Title = styled.Text`
 export const BackgroundImage = styled.ImageBackground`
     ${({theme}) => css`
         width: 100%;
-        height: 50%;
+        height: 220px;
     `}
 `;
