@@ -5,10 +5,11 @@ import * as S from './styles'
 export interface InputProps{
   value?: string;
   placeholder?: string;
+  secureTextEntry?: boolean;
   onChangeText?: () => void;
 }
 
-const Input  = ({value, placeholder, onChangeText}:InputProps) => {
+const Input  = ({value, placeholder, secureTextEntry = false, onChangeText}:InputProps) => {
   return (
     <View>
       <S.Input
@@ -16,6 +17,7 @@ const Input  = ({value, placeholder, onChangeText}:InputProps) => {
         placeholder={placeholder}
         placeholderTextColor='gray'
         onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );

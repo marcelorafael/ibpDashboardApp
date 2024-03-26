@@ -4,22 +4,29 @@ import * as S from './styles'
 import Input from '../../components/@core/Input';
 import Button from '../../components/@core/Button';
 
+
 const image = require('./logo2.png');
 
 
 export interface LoginProps {
   valueEmail?: string;
   valuePasswr?: string;
-  onChangeTextEmail?: () => void;
-  onChangeTextPasswr?: () => void;
+  loading?: boolean;
+  disabled?: boolean;
+  onChangeTextEmail?: (text: string) => void;
+  onChangeTextPasswr?: (text: string) => void;
+  onClickForgot?: () => void;
   onClick?: () => void;
 }
 
 const Login = ({
   valueEmail,
   valuePasswr,
+  loading,
+  disabled,
   onChangeTextEmail,
   onChangeTextPasswr,
+  onClickForgot,
   onClick,
 }: LoginProps) => {
   return (
@@ -37,12 +44,21 @@ const Login = ({
         <Input
           value={valuePasswr}
           placeholder='******'
+          secureTextEntry
           onChangeText={onChangeTextPasswr}
         />
         <Button
           title='Acessar'
           variant='container'
+          loading={loading}
+          disabled={disabled}
           onClick={onClick}
+        />
+        <Button
+          title='Esqueci a senha'
+          variant='text'
+          color='primary'
+          onClick={onClickForgot}
         />
       </S.CenterView>
     </S.Wrapper>

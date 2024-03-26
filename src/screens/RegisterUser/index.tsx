@@ -37,6 +37,7 @@ const RegisterUser = ({
             <Input
                 value={valueSenha}
                 placeholder='Senha'
+                secureTextEntry
                 onChangeText={onChangeTextSenha}
             />
             <Button
