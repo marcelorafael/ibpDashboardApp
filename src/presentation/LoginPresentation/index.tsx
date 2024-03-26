@@ -28,6 +28,18 @@ const LoginPresentation = ({ navigation }: any) => {
       .finally(() => setLoading(false))
   }
 
+  function handleForgotPassword() {
+    if(email === ''){
+      Alert.alert('Atenção!','Preencha o campo o email que deseja recuperar a senha.')
+      return;
+    }
+    
+    auth()
+      .sendPasswordResetEmail(email)
+      .then(() => Alert.alert('Redefinir senha','Enviamos um email para você'))
+      .catch(error => console.log('ERROR FORGOTPASSWORD: ', error))
+  }
+
   return (
     <View style={{ flex: 1 }}>
       <Login
@@ -35,6 +47,7 @@ const LoginPresentation = ({ navigation }: any) => {
         disabled={loading}
         onChangeTextEmail={(email) => setEmail(email) }
         onChangeTextPasswr={(password) => setPassword(password)}
+        onClickForgot={handleForgotPassword}
         onClick={() => handleSignIn()}
       />
     </View>
