@@ -60,7 +60,7 @@ export const Wrapper = styled.TouchableOpacity.attrs({
 `;
 
 export const Title = styled.Text`
-    ${({theme}) => css`
+    ${({ theme }) => css`
 
         font-size: ${theme.size.label};
 
@@ -70,7 +70,7 @@ export const Title = styled.Text`
 `;
 
 export const OtherTitle = styled.Text<WrapperTypes>`
-    ${({theme, color}) => css`
+    ${({ theme, color }) => css`
 
         font-size: ${theme.size.h4};
 
@@ -79,11 +79,18 @@ export const OtherTitle = styled.Text<WrapperTypes>`
 `;
 
 export const RightView = styled.View`
-    ${({theme}) => css`
-        margin-left: 8px;
+    ${({ theme }) => css`
+        margin-left: 12px;
+        justify-content: center;
+        /* align-items: center; */
+        width: 70%;
+        height: 100%;
     `}
 `;
 
 export const LeftView = styled.View`
-    ${({theme}) => css``}
+    ${({ theme }) => css`
+        /* width: 30%; */
+    `}
 `;
+
