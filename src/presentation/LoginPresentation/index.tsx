@@ -4,12 +4,14 @@ import Login from '../../screens/Login';
 
 import { Alert, View } from 'react-native';
 
+import useAuth from '../../hooks/useAuth';
+
 const LoginPresentation = ({ navigation }: any) => {
+  const {signed, setUser} = useAuth();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-
-  // console.log(email, password)
 
   function handleSignIn() {
     if(email === '' || password === ''){
@@ -21,8 +23,8 @@ const LoginPresentation = ({ navigation }: any) => {
 
     auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        navigation.navigate('HomePresentation')
+      .then((value) => {
+        setUser(value.user);  
       })
       .catch(error => console.log(error))
       .finally(() => setLoading(false))

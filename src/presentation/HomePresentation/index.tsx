@@ -5,6 +5,8 @@ import Home from '../../screens/Home';
 // import MiniCard from '../../components/@core/MiniCard';
 import Button from '../../components/@core/Button';
 
+import useAuth from '../../hooks/useAuth';
+
 import auth from '@react-native-firebase/auth';
 import CardQuantity from '../../components/@core/CardQuantity';
 import MiniCard from '../../components/@core/MiniCard';
@@ -21,6 +23,10 @@ function signOut(navigation: any) {
 
 
 const HomePresentation = ({ navigation }: any) => {
+  const { signed } = useAuth();
+
+  console.log("signed: ", signed)
+
   return (
     <Home title='Destaques'>
       <S.Wrapper>
@@ -85,6 +91,7 @@ const HomePresentation = ({ navigation }: any) => {
                 </View>
               </>
             </MiniCard>
+            <View style={{ width: 5 }} />
             <MiniCard
               variant='medium'
             >
@@ -102,6 +109,7 @@ const HomePresentation = ({ navigation }: any) => {
                 </View>
               </>
             </MiniCard>
+            <View style={{ width: 5 }} />
             <MiniCard
               variant='medium'
             >
@@ -122,12 +130,6 @@ const HomePresentation = ({ navigation }: any) => {
           </S.SlideHorizontalCards>
         </S.Container>
 
-        <S.Container>
-          <S.Title style={{ marginBottom: 8 }}>Pedido de oração</S.Title>
-          <View style={{ alignItems: 'center', width: '100%' }}>
-            <MiniCard variant='large' />
-          </View>
-        </S.Container>
         <View style={{ height: 220 }} />
       </S.Wrapper>
     </Home >

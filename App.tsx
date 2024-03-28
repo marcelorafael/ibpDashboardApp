@@ -11,14 +11,18 @@ import { StatusBar } from 'react-native';
 import dark from './src/theme/dark';
 import light from './src/theme/light';
 
+import AuthProvider from './src/contexts/auth';
+
 import Routes from './src/Routes';
 
 const App = () => {
   return (
     <ThemeProvider theme={dark}>
-      <View style={{flex: 1}}>
-        <StatusBar backgroundColor='#E97812' />
-        <Routes />
+      <View style={{ flex: 1 }}>
+        <AuthProvider>
+          <StatusBar backgroundColor='#E97812' />
+          <Routes />
+        </AuthProvider>
       </View>
     </ThemeProvider>
   );
