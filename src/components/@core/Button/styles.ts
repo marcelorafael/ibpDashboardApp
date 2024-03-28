@@ -1,7 +1,8 @@
-import styled, {css} from 'styled-components/native';
+import styled, { DefaultTheme, css } from 'styled-components/native';
 
-import {ButtonProps} from '.';
-
+import { ButtonProps } from '.';
+import { VariantTypes } from '.';
+import { ColorstTypes } from '.';
 const wrapperModifiers = {
   fullWidth: () => css`
     width: 100%;
@@ -22,8 +23,8 @@ const wrapperModifiers = {
 
 export const Wrapper = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7,
-})<ButtonProps>`
-  ${({theme, variant, fullWidth, color}) => css`
+}) <ButtonProps>`
+  ${({ theme, variant, fullWidth, color }) => css`
     height: 50px;
     border-radius: 8px;
 
@@ -36,20 +37,20 @@ export const Wrapper = styled.TouchableOpacity.attrs({
 
     ${variant === 'container' &&
     wrapperModifiers.container(
-      color === 'green'
+      color === 'primary'
         ? theme.colors.primary
-        : color === 'red'
-        ? theme.colors.error
-        : theme.colors.neutralL4,
+        : color === 'secondary'
+          ? theme.colors.error
+          : theme.colors.neutralL4,
     )}
 
     ${variant === 'outline' &&
     wrapperModifiers.outline(
-      color === 'green'
+      color === 'primary'
         ? theme.colors.primary
-        : color === 'red'
-        ? theme.colors.error
-        : theme.colors.neutralL4,
+        : color === 'secondary'
+          ? theme.colors.error
+          : theme.colors.neutralL4,
     )}
 
     ${variant === 'text' && wrapperModifiers.text('transparent')}
@@ -58,17 +59,40 @@ export const Wrapper = styled.TouchableOpacity.attrs({
   `}
 `;
 
+function colorFunc(theme: DefaultTheme, color: ColorstTypes, variant: VariantTypes) {
+  if (variant === 'text') {
+    return theme.colors.secondary
+  }
+
+  if (color === 'primary' && variant === 'container') {
+    return theme.colors.primary
+  }
+
+
+  // ${color === 'primary' && variant !== 'text'
+  //     ? theme.colors.light
+  //     : color === 'secondary' && variant !== 'text'
+  //       ? theme.colors.light
+  //       : theme.colors.primary}
+  return 'red'
+}
+
 export const TextButton = styled.Text<ButtonProps>`
-  ${({theme, color}) => css`
-    /* color: ${color === 'green'
-      ? theme.colors.primary
-      : color === 'red'
-      ? theme.colors.error
-      : theme.colors.neutralL4}; */
-      color: #fff;
+  ${({ theme, color, variant }) => css`
+    color: ${variant === 'container' ? theme.colors.light : theme.colors[color]};
 
     font-size: ${theme?.fonts?.title};
 
     font-weight: bold;
+  `}
+`;
+
+export const Loading = styled.ActivityIndicator.attrs(({theme}) => ({
+  size: 30,
+  color: theme.colors.error
+}))<ButtonProps>`
+  ${({ theme, color, variant }) => css`
+
+    
   `}
 `;

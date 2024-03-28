@@ -1,12 +1,57 @@
-import React from 'react'
+import React, { useState } from 'react'
+import auth from '@react-native-firebase/auth';
 import Login from '../../screens/Login';
 
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
+
+import useAuth from '../../hooks/useAuth';
 
 const LoginPresentation = ({ navigation }: any) => {
+  const {signed, setUser} = useAuth();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  function handleSignIn() {
+    if(email === '' || password === ''){
+      Alert.alert('Atenção!','Preencha todos os campos')
+      return;
+    }
+
+    setLoading(true);
+
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((value) => {
+        setUser(value.user);  
+      })
+      .catch(error => console.log(error))
+      .finally(() => setLoading(false))
+  }
+
+  function handleForgotPassword() {
+    if(email === ''){
+      Alert.alert('Atenção!','Preencha o campo o email que deseja recuperar a senha.')
+      return;
+    }
+    
+    auth()
+      .sendPasswordResetEmail(email)
+      .then(() => Alert.alert('Redefinir senha','Enviamos um email para você'))
+      .catch(error => console.log('ERROR FORGOTPASSWORD: ', error))
+  }
+
   return (
     <View style={{ flex: 1 }}>
-      <Login onClick={() => navigation.navigate('HomePresentation')} />
+      <Login
+        loading={loading}
+        disabled={loading}
+        onChangeTextEmail={(email) => setEmail(email) }
+        onChangeTextPasswr={(password) => setPassword(password)}
+        onClickForgot={handleForgotPassword}
+        onClick={() => handleSignIn()}
+      />
     </View>
   );
 }

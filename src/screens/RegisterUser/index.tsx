@@ -7,6 +7,7 @@ export interface RegisterUserProps {
     valueName?: string;
     valueEmail?: string;
     valueSenha?: string;
+    isLoading?: boolean;
     onChangeTextName?: (text: string) => void;
     onChangeTextEmail?: (text: string) => void;
     onChangeTextSenha?: (text: string) => void;
@@ -17,13 +18,14 @@ const RegisterUser = ({
     valueName,
     valueEmail,
     valueSenha,
+    isLoading,
     onChangeTextName,
     onChangeTextEmail,
     onChangeTextSenha,
     onClick,
-}:RegisterUserProps) => {
+}: RegisterUserProps) => {
     return (
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
             <Input
                 value={valueName}
                 placeholder='Nome'
@@ -37,11 +39,13 @@ const RegisterUser = ({
             <Input
                 value={valueSenha}
                 placeholder='Senha'
+                secureTextEntry
                 onChangeText={onChangeTextSenha}
             />
             <Button
                 title='Cadastrar'
                 variant='container'
+                loading={isLoading}
                 onClick={onClick}
             />
         </View>

@@ -43,7 +43,7 @@ export const Wrapper = styled.TouchableOpacity.attrs({
     ${({ theme, variant, background }) => css`
         
 
-        padding: 5px;
+        /* padding: 5px; */
 
         background-color: ${theme.colors.light};
 

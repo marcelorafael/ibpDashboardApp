@@ -4,7 +4,7 @@ import React from 'react';
 import * as S from './styles';
 
 export type VariantTypes = 'outline' | 'container' | 'text';
-export type ColorstTypes = 'red' | 'white' | 'green';
+export type ColorstTypes = 'primary' | 'secondary' | 'default';
 export type IconLocale = 'left' | 'right';
 
 export interface ButtonProps {
@@ -12,6 +12,8 @@ export interface ButtonProps {
   variant?: VariantTypes;
   fullWidth?: boolean;
   color?: ColorstTypes;
+  loading?: boolean
+  disabled?: boolean;
   onClick?: () => void;
 }
 
@@ -19,7 +21,9 @@ const Button: React.FC<ButtonProps> = ({
   title,
   variant = 'outline',
   fullWidth = false,
-  color = 'green',
+  color = 'primary',
+  loading = false,
+  disabled = false,
   onClick,
 }) => {
   return (
@@ -27,10 +31,16 @@ const Button: React.FC<ButtonProps> = ({
       onPress={onClick}
       variant={variant}
       fullWidth={fullWidth}
-      color={color}>
-      <S.TextButton color={color} style={{ transform: [{ translateX: -10 }] }}>
-        {title}
-      </S.TextButton>
+      color={color}
+      disabled={disabled}
+    >
+      {!loading
+        ? <S.TextButton color={color} variant={variant} style={{ transform: [{ translateX: -10 }] }}>
+          {title}
+        </S.TextButton>
+        : <S.Loading />
+      }
+
     </S.Wrapper >
   );
 };
