@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, StyleSheet, Text, Image, ImageBackground } from 'react-native';
 import * as S from './styles'
 import Home from '../../screens/Home';
@@ -11,27 +11,23 @@ import auth from '@react-native-firebase/auth';
 import CardQuantity from '../../components/@core/CardQuantity';
 import MiniCard from '../../components/@core/MiniCard';
 
-// const colorMiniCard = ['primary', 'black', 'default', 'blue', 'error', 'purple']
+import useFirebaseFunctions from '../../hooks/useFirebaseFunctions';
 
-function signOut(navigation: any) {
-  auth()
-    .signOut()
-    .then(() => navigation.navigate('LoginPresentation'))
-    .catch(error => console.log('ERROR SIGNOUT ', error))
-
-}
 
 
 const HomePresentation = ({ navigation }: any) => {
-  const { signed } = useAuth();
+  const { dataUser } = useAuth();
+  const { handleSignOut } = useFirebaseFunctions();
 
-  console.log("signed: ", signed)
+  console.log('dataUser: ', dataUser)
 
   return (
     <Home title='Destaques'>
-      <S.Wrapper>
-        <Button title='Cadastrar'  onClick={() => navigation.navigate('RegisterUserPresentation')} />
-      <Button title='Sair'  onClick={() => signOut(navigation)} />
+      <S.Wrapper> 
+        <Button title='Cadastrar' onClick={() => navigation.navigate('RegisterUserPresentation')} />
+        <Button title='Sair' onClick={() => handleSignOut()} />
+
+        <Text>{dataUser?.data()?.nome}</Text>
 
         <S.Container>
           <S.Title style={{ marginBottom: 8 }}>Dados Gerais</S.Title>
