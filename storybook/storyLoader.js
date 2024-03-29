@@ -6,6 +6,7 @@
 function loadStories() {
   require('../src/components/@core/Button/Button.stories');
   require('../src/components/@core/CardQuantity/CardQuantity.stories');
+  require('../src/components/@core/CircleCard/CircleCard.stories');
   require('../src/components/@core/Input/Input.stories');
   require('../src/components/@core/MiniCard/MiniCard.stories');
   require('../src/screens/Home/Home.stories');
@@ -15,6 +16,7 @@ function loadStories() {
 const stories = [
   '../src/components/@core/Button/Button.stories',
   '../src/components/@core/CardQuantity/CardQuantity.stories',
+  '../src/components/@core/CircleCard/CircleCard.stories',
   '../src/components/@core/Input/Input.stories',
   '../src/components/@core/MiniCard/MiniCard.stories',
   '../src/screens/Home/Home.stories',

@@ -28,8 +28,8 @@ const App = () => {
   );
 };
 
-export default App;
+// export default App;
 
-// export default require('./storybook').default;
+export default require('./storybook').default;
 
 // export { default } from './storybook';
