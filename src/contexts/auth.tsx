@@ -4,7 +4,7 @@ export const AuthContext = createContext({});
 
 function AuthProvider({ children }: any) {
   const [user, setUser] = useState(null);
-  // const [dataUser, setDataUser] = useState(null);
+  const [dataUser, setDataUser] = useState(null);
 
   function handleSetUser(data: any) {
     setUser(data);
@@ -14,22 +14,22 @@ function AuthProvider({ children }: any) {
     return user
   }
 
-  // function handleSetDataUser(data: any) {
-  //   setDataUser(data);
-  // }
+  function handleSetDataUser(data: any) {
+    setDataUser(data);
+  }
 
-  // function handleGetDataUser() {
-  //   return dataUser
-  // }
+  function handleGetDataUser() {
+    return dataUser
+  }
 
   return (
     <AuthContext.Provider value={{
       signed: user,
       handleSetUser,
       handleGetUser,
-      // dataUser,
-      // handleSetDataUser,
-      // handleGetDataUser
+      dataUser,
+      handleSetDataUser,
+      handleGetDataUser
     }}>
       {children}
     </AuthContext.Provider>

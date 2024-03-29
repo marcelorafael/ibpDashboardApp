@@ -8,16 +8,9 @@ import firstore from '@react-native-firebase/firestore';
 
 export default function useFirebaseFunctions() {
     const { handleSetUser, handleGetUser } = useAuth();
-    const [userLocal, setUserLocal] = useState<any>(null);
 
     function handleSignIn(email: string, password: string) {
-
-        if (email === '' || password === '') {
-            Alert.alert('Atenção!', 'Preencha todos os campos')
-            return;
-        }
-
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
 
             try {
                 let dataUser = auth().signInWithEmailAndPassword(email, password);
@@ -84,7 +77,7 @@ export default function useFirebaseFunctions() {
         handleSignIn,
         handleSignOut,
         handleNewUser,
-        getDataUser
+        getDataUser,
     }
 }
 

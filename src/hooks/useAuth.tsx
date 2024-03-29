@@ -7,18 +7,18 @@ function useAuth() {
         signed,
         handleSetUser,
         handleGetUser,
-        // dataUser,
-        // handleSetDataUser,
-        // handleGetDataUser
+        dataUser,
+        handleSetDataUser,
+        handleGetDataUser
     }: any = useContext(AuthContext);
 
     return {
         signed,
         handleSetUser,
         handleGetUser,
-        // dataUser,
-        // handleSetDataUser,
-        // handleGetDataUser
+        dataUser,
+        handleSetDataUser,
+        handleGetDataUser
     }
 }
 

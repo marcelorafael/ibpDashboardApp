@@ -8,18 +8,31 @@ import useAuth from '../../hooks/useAuth';
 import useFirebaseFunctions from '../../hooks/useFirebaseFunctions';
 
 const LoginPresentation = ({ navigation }: any) => {
-  const { handleSignIn } = useFirebaseFunctions();
-  const { handleSetUser } = useAuth();
+  const { handleSignIn, getDataUser } = useFirebaseFunctions();
+  const { handleSetDataUser } = useAuth();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
   async function signIn() {
-    setLoading(true);
-    const data = await handleSignIn(email, password);
-    handleSetUser(data);
-    setLoading(false);
+    if (email === '' || password === '') {
+      Alert.alert('Atenção!', 'Preencha todos os campos')
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const data = await handleSignIn(email, password);
+      const dataUser: any = await getDataUser(data);
+
+      handleSetDataUser(dataUser);
+
+      setLoading(false);
+    } catch (error) {
+      Alert.alert('IBP informa', 'Erro ao tentar realizar o login, verifique se seu e-mail e senha estão corretos.')
+      setLoading(false);
+    }
   }
 
   function handleForgotPassword() {

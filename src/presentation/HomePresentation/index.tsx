@@ -16,24 +16,18 @@ import useFirebaseFunctions from '../../hooks/useFirebaseFunctions';
 
 
 const HomePresentation = ({ navigation }: any) => {
-  const { signed, handleGetUser } = useAuth();
-  const { handleSignOut, getDataUser } = useFirebaseFunctions();
+  const { dataUser } = useAuth();
+  const { handleSignOut } = useFirebaseFunctions();
 
-  useEffect(() => {
-    (async () => {
-      let dataUser = null;
-      const data = handleGetUser();
-      dataUser = await getDataUser(data);
-      
-      console.log(dataUser)
-    })()
-  }, [])
+  console.log('dataUser: ', dataUser)
 
   return (
     <Home title='Destaques'>
-      <S.Wrapper>
+      <S.Wrapper> 
         <Button title='Cadastrar' onClick={() => navigation.navigate('RegisterUserPresentation')} />
         <Button title='Sair' onClick={() => handleSignOut()} />
+
+        <Text>{dataUser?.data()?.nome}</Text>
 
         <S.Container>
           <S.Title style={{ marginBottom: 8 }}>Dados Gerais</S.Title>
